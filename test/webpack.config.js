@@ -18,7 +18,7 @@ function includePlugin() {
 
 module.exports = {
 	context: __dirname,
-	entry: "mocha-loader!./all.js",
+	entry: "./all.js",
 	resolve: {
 		extensions: ["", ".js", ".css", ".styl"]
 	},

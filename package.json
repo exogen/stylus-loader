@@ -11,7 +11,8 @@
     "test": "testem ci",
     "test-dev": "testem -l firefox",
     "test-one": "testem ci -l firefox",
-    "test-build": "webpack --config test/webpack.config.js --output-path test/tmp --output-file bundle.js"
+    "test-build": "webpack --config test/webpack.config.js --output-path test/tmp --output-file bundle.js",
+    "test-custom-import": "npm run test-build && node test/tmp/bundle.js"
   },
   "author": "Kyle Robinson Young <kyle@dontkry.com> (http://dontkry.com)",
   "license": "MIT",
