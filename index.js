@@ -122,7 +122,7 @@ module.exports = function(source) {
         .reduce(boundResolvers, path.dirname(options.filename), filename)
         .then(function(paths) { return carry.concat(paths); });
     }, [])
-    // Resolve dependencies of 
+    // Resolve dependencies of
     .then(function(paths) {
       paths.forEach(styl.import.bind(styl));
       paths.forEach(self.addDependency);
@@ -153,6 +153,14 @@ module.exports = function(source) {
       });
 
       // var paths = importPathCache.origins;
+
+      console.log("Renderer:");
+      console.log("  contexts:");
+      console.log(styl.options.cache.contexts);
+      console.log("  imports:");
+      console.log(styl.options.cache.imports);
+      console.log("  simpleContext:");
+      console.log(styl.options.cache.simpleContext);
 
       styl.render(function(err, css) {
         if (err) {
